@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<items>
+    <ammunition id="1">
+        <noOfRounds>100</noOfRounds>
+        <caliber>100.0</caliber>
+        <manufacturer>testManufacturer</manufacturer>
+        <price>99.0</price>
+    </ammunition>
+</items>

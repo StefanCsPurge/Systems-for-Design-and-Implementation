@@ -1,0 +1,72 @@
+<h2 style="margin-left: 5px">Gun accessories</h2>
+<div class="form-group">
+  <input type="text" placeholder="accessory type" #typeFilter>
+  <button (click)="filterAccessoriesByType(typeFilter.value)"> Find </button>
+</div>
+
+<!--<table>-->
+<!--  <thead>-->
+<!--  <th>ID</th>-->
+<!--  <th>Name</th>-->
+<!--  <th>Type</th>-->
+<!--  <th>Company</th>-->
+<!--  <th>Price</th>-->
+<!--  <th>Gun ID</th>-->
+<!--  </thead>-->
+<!--  <tr *ngFor="let acc of accessories">-->
+<!--    <td>{{acc.id}}</td>-->
+<!--    <td> {{acc.name}} </td>-->
+<!--    <td>{{acc.type}} </td>-->
+<!--    <td>{{acc.company}}</td>-->
+<!--    <td>{{acc.price}} </td>-->
+<!--    <td> {{acc.gunId}}</td>-->
+<!--    <td>-->
+<!--      <button (click)="deleteAccessory(acc.id)"> Delete </button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--</table>-->
+
+<br>
+<mat-table #table [dataSource]="accessories" matSort (matSortChange)="sortByPrice(table)" style="width: auto">
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let acc">{{acc.id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let acc">{{acc.name}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+    <mat-cell *matCellDef="let acc">{{acc.type}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="company">
+    <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+    <mat-cell *matCellDef="let acc">{{acc.company}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+    <mat-cell *matCellDef="let acc">{{acc.price}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="gunId">
+    <mat-header-cell *matHeaderCellDef>Gun ID</mat-header-cell>
+    <mat-cell *matCellDef="let acc">{{acc.gunId}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="options">
+    <mat-header-cell *matHeaderCellDef>(options)</mat-header-cell>
+    <mat-cell *matCellDef="let acc">
+      <button (click)="gotoEdit(acc.id)"> Edit </button>
+      <button (click)="deleteAccessory(acc.id)"> Delete </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

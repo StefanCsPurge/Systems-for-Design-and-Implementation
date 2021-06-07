@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<items>
+    <gun id="1">
+        <model>modelTest</model>
+        <manufacturer>manufacturerTest</manufacturer>
+        <type>typeTest</type>
+        <weight>99.0</weight>
+        <price>999.0</price>
+    </gun>
+</items>

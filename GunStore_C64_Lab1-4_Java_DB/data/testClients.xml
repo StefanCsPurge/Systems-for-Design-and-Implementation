@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<items>
+    <client id="1">
+        <name>testName</name>
+        <cnp>1234567890123</cnp>
+        <budget>999.0</budget>
+    </client>
+</items>

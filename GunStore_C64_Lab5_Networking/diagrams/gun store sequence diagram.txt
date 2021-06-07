@@ -1,0 +1,60 @@
+title Gun store sequence diagram
+
+actor User
+participant UI
+participant Service
+participant Repo
+
+loop infinite
+  UI->User: display menu
+  User->UI:select option
+    alt case ADD ENTITY
+  
+      User->UI: inserts new entity
+      UI->Service: insert entity
+      Service->Repo: insert entity
+    	alt case entity already in repo
+        	Repo->Service: exception
+            Service->UI: exception
+            UI->User: error is displayed to the user
+      	else case entity not in repo
+        	UI->User: added succesfully is displayed
+      	end
+    else case DISPLAY ENTITIES
+    	User->UI: chooses entity to be displayed
+   		UI->Service: get all entities
+        Service->Repo: get all entities
+        Repo->Service: return all entities
+        Service->UI: return all entities
+        UI->User: all entities are displayed
+    
+    else case UPDATE ENTITY
+    User->UI: gives entity id
+    UI->Service: check that entity exists
+    Service->Repo: check if entity exists
+  
+    	alt case entity does not exist
+        	Repo->Service: entity does not exist
+            Service->UI: entity does not exist
+            UI->User: error is displayed to the user
+      	else case entity exists
+        	UI->User: added succesfully is displayed
+            User->UI: inserts new entity details
+            UI->Service: update entity
+            Service->Repo: update entity
+      	end
+    else case DELETE ENTITY
+    User->UI: gives entity id
+    UI->Service: check that entity exists
+    Service->Repo: check if entity exists
+  
+    	alt case entity exists
+            UI->User: deleted succesfully is displayed to the user
+      	else case entity does not exists
+        	Repo->Service: exception
+            Service->UI: exception
+            UI->User: error is displayed to the user
+      	end
+    end
+end
+

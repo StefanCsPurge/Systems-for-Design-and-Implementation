@@ -1,0 +1,7 @@
+<button (click)="gotoAddOrder()">Add new order</button>
+
+<p *ngIf="!clientId"> Getting client ID </p>
+<app-client-orders-list *ngIf="clientId"> </app-client-orders-list>
+
+<button (click)="goBack()">Back</button>
+

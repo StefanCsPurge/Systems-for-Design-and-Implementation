@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+  /*background-color: #DA7B93;*/
+  background-color: #B39BC8;
+}
+
+h1{
+  font-family: Calibri, serif;
+  padding: 5px;
+}
+
+table,
+th,
+td {
+  padding: 10px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 10px}

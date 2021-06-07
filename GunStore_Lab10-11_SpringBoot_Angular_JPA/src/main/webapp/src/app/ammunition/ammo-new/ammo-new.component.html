@@ -1,0 +1,79 @@
+<div class="new-ammo-template-form">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+
+        <div class="col-sm-5 form-group">
+          <label for="noOfRounds">No. of rounds: </label>
+          <input
+            type="number"
+            id="noOfRounds"
+            class="form-control"
+            name="noOfRounds"
+            ngModel
+            required
+            #noOfRounds="ngModel">
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="caliber">Caliber: </label>
+          <input
+            type="number" step=0.01 min=0
+            id="caliber"
+            class="form-control"
+            name="caliber"
+            ngModel
+            required
+            #caliber="ngModel">
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="manufacturer">Manufacturer: </label>
+          <input
+            type="text"
+            id="manufacturer"
+            class="form-control"
+            name="manufacturer"
+            ngModel>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="price">Price: </label>
+          <input
+            type="number" step=0.01 min=0
+            id="price"
+            class="form-control"
+            name="price"
+            ngModel
+            required
+            #price="ngModel">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            class="btn btn-success"
+            type="submit">Add</button>
+          <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+
+    </form>
+    <div style="color:red; margin: 10px" *ngIf="noOfRounds.errors && (noOfRounds.dirty || noOfRounds.touched)">
+      <p *ngIf="noOfRounds.errors.required">
+        No. of rounds is required
+      </p>
+    </div>
+    <div style="color:red; margin: 10px" *ngIf="caliber.errors && (caliber.dirty || caliber.touched)">
+      <p *ngIf="caliber.errors.required">
+        Caliber is required
+      </p>
+    </div>
+    <div style="color:red; margin: 10px" *ngIf="price.errors && (price.dirty || price.touched)">
+      <p *ngIf="price.errors.required">
+        Price is required
+      </p>
+    </div>
+  </div>
+</div>

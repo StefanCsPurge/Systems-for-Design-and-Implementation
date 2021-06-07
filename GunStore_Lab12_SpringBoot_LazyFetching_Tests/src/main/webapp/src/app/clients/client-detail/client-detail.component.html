@@ -1,0 +1,36 @@
+<div *ngIf="!client">Loading data...</div>
+<div *ngIf="client">
+    <h2>Client "{{client.name}}" details</h2>
+    <div> <input placeholder="{{client.id}}" readonly>
+      <label> ID: </label> {{client.id}}
+    </div>
+    <div>
+        <input [(ngModel)]="client.cnp" placeholder="CNP">
+        <label> CNP: </label> {{client.cnp}}
+    </div>
+    <div>
+        <input [(ngModel)]="client.name" placeholder="name">
+        <label> Name: </label> {{client.name}}
+    </div>
+    <div>
+        <input [(ngModel)]="client.budget" placeholder="budget">
+        <label> Budget: </label> {{client.budget}}
+    </div>
+
+    <p>Address</p>
+    <div>
+      <input [(ngModel)]="client.streetNumber" placeholder="number">
+      <label> Number: </label> {{client.streetNumber}}
+    </div>
+    <div>
+      <input [(ngModel)]="client.street" placeholder="street">
+      <label> Street: </label> {{client.street}}
+    </div>
+    <div>
+      <input [(ngModel)]="client.city" placeholder="city">
+      <label> City: </label> {{client.city}}
+    </div>
+
+    <button (click)="goBack()">Back</button>
+    <button (click)="save()">Update</button>
+</div>

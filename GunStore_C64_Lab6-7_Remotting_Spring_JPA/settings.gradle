@@ -1,0 +1,5 @@
+rootProject.name = 'gun_store'
+include 'common'
+include 'server'
+include 'client'
+

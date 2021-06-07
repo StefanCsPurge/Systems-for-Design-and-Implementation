@@ -1,0 +1,19 @@
+<div id="clientsList">
+<h2>Clients</h2>
+  <div *ngIf="isLoading$ | async">Loading data...</div>
+  <ol class="clients" *ngIf="!(isLoading$ | async)">
+      <li *ngFor="let client of clients "
+          [class.selected]="client === selectedClient"
+          (click)="onSelect(client)">
+          {{client.name}}
+      </li>
+  </ol>
+</div>
+
+<div id="showClientDetails" *ngIf="selectedClient" style="margin-left: 55px">
+  <h2>
+    {{selectedClient.name | uppercase}} was selected
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+  <button class="delete" (click)="gotoDelete()">Delete this client</button>
+</div>

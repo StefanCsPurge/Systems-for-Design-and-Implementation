@@ -1,0 +1,59 @@
+<div class="edit-acc-page" style="display: flex">
+
+  <div *ngIf="!accessory">Loading data...</div>
+
+  <div *ngIf="accessory">
+    <div> <input placeholder="{{accessory.id}}" readonly>
+      <label> ID </label>
+    </div>
+    <div>
+      <input [(ngModel)]="accessory.name" placeholder="name">
+      <label> Name </label>
+    </div>
+    <div>
+      <input [(ngModel)]="accessory.type" placeholder="type">
+      <label> Type </label>
+    </div>
+    <div>
+      <input [(ngModel)]="accessory.company" placeholder="company">
+      <label> Company </label>
+    </div>
+    <div>
+      <input [(ngModel)]="accessory.price" placeholder="price">
+      <label> Price </label>
+    </div>
+
+    <div>
+      <input placeholder="{{accessory.gunId}}" readonly>
+      <label> Gun ID </label>
+    </div>
+
+    <button (click)="goBack()">Back</button>
+    <button (click)="update()">Update</button>
+  </div>
+
+  <table style="margin-left: 45px">
+    <thead>
+    <th>ID</th>
+    <th>Model</th>
+    <th>Manufacturer</th>
+    <th>Type</th>
+    <th>Weight</th>
+    <th>Price</th>
+    <td> (select gun) </td>
+    </thead>
+    <tr *ngFor="let gun of guns">
+      <td>{{gun.id}}</td>
+      <td> {{gun.model}} </td>
+      <td>{{gun.manufacturer}} </td>
+      <td>{{gun.type}}</td>
+      <td>{{gun.weight}} </td>
+      <td> {{gun.price}}</td>
+      <td style="text-align: center"> <input type="radio" name="select"
+                                             value="{{gun.id}}"
+                                             (change)="accessory.gunId = gun.id"/>
+      </td>
+    </tr>
+  </table>
+
+</div>

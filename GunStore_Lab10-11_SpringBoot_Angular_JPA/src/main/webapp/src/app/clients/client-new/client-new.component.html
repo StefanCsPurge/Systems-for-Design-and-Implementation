@@ -1,0 +1,21 @@
+<h2>New Client</h2>
+
+<div class="new-client-form">
+  <label>Name: </label><input #nameInput/>
+  <label>Cnp: </label><input #cnpInput/>
+  <label>Budget: </label><input #budgetInput/>
+
+  <h4>Address</h4> <label></label>
+  <label>City: </label><input #cityInput/>
+  <label>Street: </label><input #streetInput/>
+  <label>Number: </label><input #numberInput/>
+  <label></label>
+  <button (click)="saveClient(nameInput.value,
+                              cnpInput.value,
+                              budgetInput.value,
+                              cityInput.value,
+                              streetInput.value,
+                              numberInput.value)"
+          style="margin-left: 90px">
+    Save</button>
+</div>

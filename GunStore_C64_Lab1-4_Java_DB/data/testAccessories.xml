@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<items>
+    <gun-accessory id="1">
+        <name>testName</name>
+        <type>testType</type>
+        <company>testCompany</company>
+        <price>99.0</price>
+    </gun-accessory>
+</items>

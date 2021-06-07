@@ -1,0 +1,33 @@
+label   { text-align:right; }
+
+.new-acc-template-form {
+  display:grid;
+  grid-template-columns: max-content max-content;
+  grid-gap:5px;
+}
+.row {
+  text-align:right;
+  margin: 5px;
+}
+
+.form-group{
+  margin: 5px;
+}
+
+button {
+  font-family: Arial, serif;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}

@@ -1,0 +1,26 @@
+<h2 style="margin-left: 5px">Ammunition</h2>
+<div class="form-group">
+  <input type="number" placeholder="caliber" #calFilter>
+  <button (click)="filterAmmoByCaliber(+calFilter.value)"> Find </button>
+</div>
+
+<table>
+  <thead>
+  <th>ID</th>
+  <th>No. of rounds</th>
+  <th>Caliber</th>
+  <th>Manufacturer</th>
+  <th>Price</th>
+  <button (click)="sortAmmoByPrice()" style="margin: 5px"> Sort by price </button>
+  </thead>
+  <tr *ngFor="let ammo of ammunition">
+    <td>{{ammo.id}}</td>
+    <td> {{ammo.noOfRounds}} </td>
+    <td>{{ammo.caliber}} </td>
+    <td>{{ammo.manufacturer}}</td>
+    <td>{{ammo.price}} </td>
+    <td>
+      <button (click)="deleteAmmo(ammo.id)"> Delete </button>
+    </td>
+  </tr>
+</table>

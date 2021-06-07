@@ -1,0 +1,5 @@
+<dataset>
+    <gun id="11" manufacturer="man1" model="model1" price="11" type="type1" weight="11" timessold="1" />
+    <gun id="22" manufacturer="man2" model="model2" price="22" type="type2" weight="22" timessold="2" />
+
+</dataset>

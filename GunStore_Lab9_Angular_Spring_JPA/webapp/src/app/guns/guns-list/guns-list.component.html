@@ -1,0 +1,26 @@
+<h2>Guns</h2>
+<table>
+  <thead>
+  <th>ID</th>
+  <th>Model</th>
+  <th>Manufacturer</th>
+  <th>Type</th>
+  <th>Weight</th>
+  <th>Price</th>
+  </thead>
+  <tr *ngFor="let gun of guns">
+    <td>{{gun.id}}</td>
+    <td> {{gun.model}} </td>
+    <td>{{gun.manufacturer}} </td>
+    <td>{{gun.type}}</td>
+    <td>{{gun.weight}} </td>
+    <td> {{gun.price}}</td>
+    <td> <input type="checkbox" name="options"
+                value="{{gun.id}}"
+                [(ngModel)]="gun.checked"/> </td>
+  </tr>
+</table>
+<br>
+<button (click)="deleteSelectedGuns()"> Delete selected guns </button>
+
+

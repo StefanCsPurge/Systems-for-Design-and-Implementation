@@ -1,0 +1,5 @@
+rootProject.name = 'gun_store_REST'
+include 'gun-store-core'
+include 'gun-store-web'
+include 'gun-store-client'
+

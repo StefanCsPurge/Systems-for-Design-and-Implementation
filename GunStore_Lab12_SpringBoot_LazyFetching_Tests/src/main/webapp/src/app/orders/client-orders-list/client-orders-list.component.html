@@ -1,0 +1,17 @@
+
+<table>
+<thead>
+<th>ID</th>
+<th>Client ID</th>
+<th>Gun ID</th>
+<td></td>
+</thead>
+<tr *ngFor="let order of orders">
+  <td>{{order.id}}</td>
+  <td> {{order.clientId}} </td>
+  <td>{{order.gunId}} </td>
+  <td>
+    <button (click)="deleteClientOrder(order.clientId, order.id)"> Delete </button>
+  </td>
+</tr>
+</table>

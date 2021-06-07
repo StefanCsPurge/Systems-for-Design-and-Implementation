@@ -1,0 +1,28 @@
+#deletePrompt{
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+button {
+  font-family: Arial, serif;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #cfd8dc;
+}
+button:disabled {
+  background-color: #eee;
+  color: #ccc;
+  cursor: auto;
+}
+
+label{
+  margin-top: 10px;
+  padding-top: 10px;
+}

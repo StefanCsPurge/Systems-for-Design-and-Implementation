@@ -1,0 +1,11 @@
+<div id="deletePrompt" *ngIf="client">
+  <h2>Are you sure?</h2>
+  <h4> The client with details: </h4>
+    <label> ID: </label> {{client.id}} <br>
+    <label> Name: </label> {{client.name}} <br>
+    <label> CNP: </label> {{client.cnp}} <br>
+    <label> Budget: </label> {{client.budget}}
+  <h4> will be deleted </h4> <br>
+  <button (click)="goBack()">Cancel</button>
+  <button (click)="delete()">Yes!</button>
+</div>

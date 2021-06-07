@@ -1,0 +1,32 @@
+<div id="new-client-order">
+
+<table>
+  <thead>
+  <th>ID</th>
+  <th>Model</th>
+  <th>Manufacturer</th>
+  <th>Type</th>
+  <th>Weight</th>
+  <th>Price</th>
+  <td> (select gun) </td>
+  </thead>
+  <tr *ngFor="let gun of guns">
+    <td>{{gun.id}}</td>
+    <td> {{gun.model}} </td>
+    <td>{{gun.manufacturer}} </td>
+    <td>{{gun.type}}</td>
+    <td>{{gun.weight}} </td>
+    <td> {{gun.price}}</td>
+    <td style="text-align: center"> <input type="radio" name="select"
+                                           value="{{gun.id}}"
+                                           (change)="selectedGun = gun"/>
+    </td>
+  </tr>
+</table>
+
+  <div style="margin-left: 20px">
+  <label> Client ID: {{clientId}} </label>
+    <br>
+  <button (click)="addOrder()"> Add client order </button>
+  </div>
+</div>
