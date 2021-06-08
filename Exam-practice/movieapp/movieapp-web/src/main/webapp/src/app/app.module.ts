@@ -9,6 +9,8 @@ import {StudentDetailComponent} from "./students/student-detail/student-detail.c
 import {StudentsComponent} from "./students/students.component";
 import {StudentListComponent} from "./students/student-list/student-list.component";
 import {StudentService} from "./students/shared/student.service";
+import { MoviesComponent } from './movies/movies.component';
+import {MovieService} from "./movies/shared/movie.service";
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import {StudentService} from "./students/shared/student.service";
     StudentDetailComponent,
     StudentsComponent,
     StudentListComponent,
+    MoviesComponent,
 
 
 
@@ -27,7 +30,7 @@ import {StudentService} from "./students/shared/student.service";
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [StudentService],
+  providers: [MovieService, StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
