@@ -47,9 +47,6 @@ public class ClientApp {
         ui.addCommand(new ListGunTypeCommand("listGunsTypeStr", "list all guns whose type contains a given string", gunService));
         ui.addCommand(new PrintTop3GunsCommand("printTop3Guns", "prints the top 3 of the most sold guns", gunService));
 
-        
-
-
         ui.run();
 
         executorService.shutdown();
