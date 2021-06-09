@@ -21,4 +21,9 @@ export class SensorService {
     return this.httpClient
       .get<Array<Sensor>>(this.moviesUrl + '/getMostRecent4/' + name);
   }
+
+  stopSensor(name: string) {
+    return this.httpClient
+      .get<any>(this.moviesUrl + '/stopSensor/' + name);
+  }
 }

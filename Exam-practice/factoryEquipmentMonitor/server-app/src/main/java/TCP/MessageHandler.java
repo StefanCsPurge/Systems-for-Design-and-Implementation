@@ -36,4 +36,10 @@ public class MessageHandler {
             return new Message("error", "false");
         }
     }
+
+    public Message stopSensor(Message request) {
+        String sensorName = request.getBody();
+        System.out.println("Got sensor to stop: " + sensorName);
+        return new Message("ok", "true");
+    }
 }

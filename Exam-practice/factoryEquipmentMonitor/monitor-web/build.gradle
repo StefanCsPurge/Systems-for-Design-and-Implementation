@@ -10,6 +10,7 @@ war {
 
 dependencies {
     compile project(':monitor-core')
+    //compile project(':common')
 
     compile group: 'org.springframework', name: 'spring-webmvc', version: "$springVersion"
 

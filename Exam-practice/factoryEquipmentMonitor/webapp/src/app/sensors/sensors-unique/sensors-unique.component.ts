@@ -34,4 +34,8 @@ export class SensorsUniqueComponent implements OnInit {
       });
     }
   }
+
+  stopSensor(name: string) {
+     this.sensorService.stopSensor(name).subscribe();
+  }
 }

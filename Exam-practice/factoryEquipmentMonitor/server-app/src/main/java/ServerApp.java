@@ -11,6 +11,7 @@ public class ServerApp {
 
         MessageHandler messageHandler = new MessageHandler();
         server.addHandler("addSensorData", messageHandler::addSensorData);
+        server.addHandler("stopSensor", messageHandler::stopSensor);
 
         System.out.println("Server up and running!");
         server.startServer();

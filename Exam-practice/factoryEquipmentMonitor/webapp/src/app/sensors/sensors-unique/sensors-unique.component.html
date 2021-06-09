@@ -10,7 +10,7 @@
 
 <div *ngIf="showEnabled">
   <div *ngFor="let name of names">
-    <label>Sensor name:</label> {{name}} <button> Stop </button>
+    <label>Sensor name:</label> {{name}} <button (click)="stopSensor(name)"> Stop </button>
     <ul>
       <li *ngFor="let s of sensorsTable[name]">
         {{s.id}}, {{s.name}}, {{s.measurement}}, {{s.time}}
