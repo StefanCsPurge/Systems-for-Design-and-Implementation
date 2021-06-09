@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { SensorsComponent } from './sensors/sensors.component';
 import {SensorService} from "./sensors/shared/sensor.service";
 import {HttpClientModule} from "@angular/common/http";
+import { SensorsUniqueComponent } from './sensors/sensors-unique/sensors-unique.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SensorsComponent
+    SensorsComponent,
+    SensorsUniqueComponent
   ],
   imports: [
     BrowserModule,

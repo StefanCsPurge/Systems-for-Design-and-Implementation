@@ -1,0 +1,21 @@
+<p>The sensors are:</p>
+
+<ul>
+  <li *ngFor="let name of names">
+    {{name}}
+  </li>
+</ul>
+<button (click)="showLastMeasurements()"> Show </button>
+<br><br>
+
+<div *ngIf="showEnabled">
+  <div *ngFor="let name of names">
+    <label>Sensor name:</label> {{name}} <button> Stop </button>
+    <ul>
+      <li *ngFor="let s of sensorsTable[name]">
+        {{s.id}}, {{s.name}}, {{s.measurement}}, {{s.time}}
+      </li>
+    </ul>
+  </div>
+
+</div>

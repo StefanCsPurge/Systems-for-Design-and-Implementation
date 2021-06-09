@@ -11,4 +11,14 @@ export class SensorService {
     return this.httpClient
       .get<Array<Sensor>>(this.moviesUrl);
   }
+
+  getSensorNames() {
+    return this.httpClient
+      .get<Array<string>>(this.moviesUrl + '/names');
+  }
+
+  getSensorsByName(name: string) {
+    return this.httpClient
+      .get<Array<Sensor>>(this.moviesUrl + '/getMostRecent4/' + name);
+  }
 }
