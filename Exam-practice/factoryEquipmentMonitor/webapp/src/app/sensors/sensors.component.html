@@ -1,0 +1,14 @@
+<table class="main-table">
+  <thead>
+  <th class="main-table">ID</th>
+  <th class="main-table">Name</th>
+  <th class="main-table">Measurement</th>
+  <th class="main-table">Time</th>
+  </thead>
+  <tr *ngFor="let s of sensors">
+    <td class="main-table">{{s.id}}</td>
+    <td class="main-table">{{s.name}}</td>
+    <td class="main-table">{{s.measurement}}</td>
+    <td class="main-table">{{s.time}}</td>
+  </tr>
+</table>
