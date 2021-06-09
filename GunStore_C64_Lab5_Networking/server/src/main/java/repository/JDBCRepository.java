@@ -61,7 +61,6 @@ public class JDBCRepository<ID, T extends BaseEntity<ID>> implements Repository<
      * find a specific element from the repo given its id
      * @param id
      *            must be not null.
-     * @return
      */
     @Override
     public Optional<T> findOne(ID id) {

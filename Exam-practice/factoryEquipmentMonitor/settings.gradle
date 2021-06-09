@@ -3,4 +3,5 @@ include 'sensor-app'
 include 'server-app'
 include 'monitor-core'
 include 'monitor-web'
+include 'common'
 
