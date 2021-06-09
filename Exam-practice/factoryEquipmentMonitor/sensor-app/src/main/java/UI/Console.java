@@ -50,7 +50,6 @@ public class Console {
                     Message message = new Message("addSensorData", SensorAdaptor.sensorDataToMessage(sensor_name,sensor_id,measurement));
                     try {
                         Message response = tcpClient.sendAndReceive(message);
-                        System.out.println(response.getBody());
                         return Boolean.parseBoolean(response.getBody());
                     } catch (Exception e) {
                         e.printStackTrace();
