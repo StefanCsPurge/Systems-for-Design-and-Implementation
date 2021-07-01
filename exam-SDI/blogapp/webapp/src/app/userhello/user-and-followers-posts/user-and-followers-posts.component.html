@@ -1,0 +1,21 @@
+<div *ngIf="userFollowersPosts">
+  User {{userFollowersPosts.name}} with followers:
+  <ol>
+    <li *ngFor="let f of userFollowersPosts.followers">
+      {{f.name}}
+    </li>
+  </ol>
+  and posts:
+  <ol>
+    <li *ngFor="let p of userFollowersPosts.posts">
+      {{p.title}} <br>
+      comments:
+      <ol>
+        <li *ngFor="let c of p.comments">
+          {{c}}
+        </li>
+      </ol>
+    </li>
+  </ol>
+
+</div>

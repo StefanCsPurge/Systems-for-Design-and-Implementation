@@ -1,0 +1,4 @@
+rootProject.name = 'blogapp'
+include 'blogapp-core'
+include 'blogapp-web'
+

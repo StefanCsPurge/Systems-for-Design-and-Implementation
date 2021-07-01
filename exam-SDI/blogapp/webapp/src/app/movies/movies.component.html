@@ -1,0 +1,36 @@
+<div id="search-movies">
+  <label>Year: </label>
+  <input type="number" #yearInput>
+  <input type="radio" name="select"
+         value="before"
+         (change)="showMovies('before', yearInput.value)"/>
+  <label>Before</label>
+  <input type="radio" name="select"
+         value="after"
+         (change)="showMovies('after', yearInput.value)"/>
+  <label>After</label>
+</div>
+
+<div id="movies-list" *ngIf="gotMovies">
+  <table class="main-table">
+    <thead>
+      <th class="main-table">Title</th>
+      <th class="main-table">Year</th>
+      <th *ngIf="gotCast" class="main-table">Cast - name & rating</th>
+    </thead>
+    <tr *ngFor="let movie of movies">
+      <td class="main-table">{{movie.title}}</td>
+      <td class="main-table">{{movie.year}}</td>
+      <td *ngIf="gotCast" class="main-table">
+          <table>
+            <tr *ngFor="let actor of movie.actors">
+              <td>{{actor.name}}</td>
+              <td>{{actor.rating}}</td>
+              <td><button (click)="deleteActor(movie,actor)">Delete</button></td>
+            </tr>
+          </table>
+      </td>
+    </tr>
+  </table>
+  <button (click)="getMoviesWithActors(yearInput.value)">Show cast</button>
+</div>
